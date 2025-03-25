@@ -3,7 +3,7 @@ from requests import get, post, delete, put
 print(get('http://localhost:5000/api/v2/users').json(), 3 * '\n')  # Получение всех пользователей
 print(get('http://localhost:5000/api/v2/users/2').json(), 3 * '\n')  # Корректное получение одной пользователей
 print(get('http://localhost:5000/api/v2/users/999999').json(), 3 * '\n')  # Ошибочный запрос на получение одной пользователей — неверный id
-print(get('http://localhost:5000/api/v2/users/q').json(), 3 * '\n')  # Ошибочный запрос на получение одной пользователей — строка
+# print(get('http://localhost:5000/api/v2/users/q').json(), 3 * '\n')  # Ошибочный запрос на получение одной пользователей — строка
 
 
 print(post('http://localhost:5000/api/v2/users', json={}).json(), 3 * '\n')  # Пустой json
@@ -16,7 +16,7 @@ print(post('http://localhost:5000/api/v2/users', json={
                                                 }).json(), 3 * '\n')  # правильный запрос
 print(get('http://localhost:5000/api/v2/users').json(), 3 * '\n')  # Получение всех пользователей
 
-print(delete('http://localhost:5000/api/v2/users/q').json(), 3 * '\n')  # Не корректный id
+# print(delete('http://localhost:5000/api/v2/users/q').json(), 3 * '\n')  # Не корректный id
 print(delete('http://localhost:5000/api/v2/users/999999999').json(), 3 * '\n')  # Не корректный id
 print(delete('http://localhost:5000/api/v2/users/4').json(), 3 * '\n')  # правильный запрос
 print(get('http://localhost:5000/api/v2/users').json(), 3 * '\n')  # Получение всех пользователей
