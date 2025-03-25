@@ -37,7 +37,6 @@ class UsersResource(Resource):
 
     def put(self, user_id):
         args = put_parser.parse_args()
-        user_id = user_id
 
         abort_if_object_not_found(user_id, User)
 
