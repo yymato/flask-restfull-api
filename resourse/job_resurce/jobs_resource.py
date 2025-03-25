@@ -43,15 +43,15 @@ class JobsResource(Resource):
 
         session = db_session.create_session()
         job = session.query(Jobs).get(job_id)
-        if args['team_leader']:
+        if 'team_leader' in args:
             job.name = args['team_leader']
-        if args['job']:
+        if 'job' in args:
             job.about = args['job']
-        if args['work_size']:
+        if 'work_size' in args:
             job.email = args['work_size']
-        if args['collaborators']:
+        if 'collaborators' in args:
             job.collaborators = args['collaborators']
-        if args['is_finished']:
+        if 'is_finished' in args:
             job.is_finished = args['is_finished']
 
         session.commit()

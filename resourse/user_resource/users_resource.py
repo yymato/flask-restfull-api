@@ -42,13 +42,13 @@ class UsersResource(Resource):
 
         session = db_session.create_session()
         user = session.query(User).get(user_id)
-        if args['name']:
+        if 'name' in args:
             user.name = args['name']
-        if args['about']:
+        if 'about' in args:
             user.about = args['about']
-        if args['email']:
+        if 'email' in args:
             user.email = args['email']
-        if args['password']:
+        if 'password' in args:
             user.set_password(args['password'])
 
         session.commit()
